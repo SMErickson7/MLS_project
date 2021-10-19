@@ -1,0 +1,220 @@
+{
+  "get": "fixtures/headtohead",
+  "parameters": {
+    "h2h": "1609-1604",
+    "league": "253",
+    "season": "2021"
+  },
+  "errors": [],
+  "results": 3,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "fixture": {
+        "id": 695237,
+        "referee": "A. Chapman",
+        "timezone": "UTC",
+        "date": "2021-06-19T23:30:00+00:00",
+        "timestamp": 1624145400,
+        "periods": {
+          "first": 1624145400,
+          "second": 1624149000
+        },
+        "venue": {
+          "id": 1619,
+          "name": "Red Bull Arena",
+          "city": "Harrison, New Jersey"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 12"
+      },
+      "teams": {
+        "home": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png",
+          "winner": false
+        },
+        "away": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": true
+        }
+      },
+      "goals": {
+        "home": 2,
+        "away": 3
+      },
+      "score": {
+        "halftime": {
+          "home": 0,
+          "away": 1
+        },
+        "fulltime": {
+          "home": 2,
+          "away": 3
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    },
+    {
+      "fixture": {
+        "id": 695421,
+        "referee": "K. Stott",
+        "timezone": "UTC",
+        "date": "2021-08-28T23:30:00+00:00",
+        "timestamp": 1630193400,
+        "periods": {
+          "first": 1630193400,
+          "second": 1630197000
+        },
+        "venue": {
+          "id": 1833,
+          "name": "Yankee Stadium",
+          "city": "New York City"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 29"
+      },
+      "teams": {
+        "home": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png",
+          "winner": true
+        },
+        "away": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 2,
+        "away": 0
+      },
+      "score": {
+        "halftime": {
+          "home": 1,
+          "away": 0
+        },
+        "fulltime": {
+          "home": 2,
+          "away": 0
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    },
+    {
+      "fixture": {
+        "id": 695441,
+        "referee": "C. Penso",
+        "timezone": "UTC",
+        "date": "2021-09-11T23:00:00+00:00",
+        "timestamp": 1631401200,
+        "periods": {
+          "first": 1631401200,
+          "second": 1631404800
+        },
+        "venue": {
+          "id": 1618,
+          "name": "Gillette Stadium",
+          "city": "Foxborough, Massachusetts"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 31"
+      },
+      "teams": {
+        "home": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": true
+        },
+        "away": {
+          "id": 1604,
+          "name": "New York City FC",
+          "logo": "https://media.api-sports.io/football/teams/1604.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 2,
+        "away": 1
+      },
+      "score": {
+        "halftime": {
+          "home": 1,
+          "away": 1
+        },
+        "fulltime": {
+          "home": 2,
+          "away": 1
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    }
+  ]
+}

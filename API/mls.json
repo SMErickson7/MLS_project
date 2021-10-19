@@ -1,0 +1,249 @@
+{
+  "errors": [],
+  "get": "leagues",
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "parameters": {
+    "id": "253"
+  },
+  "response": [
+    {
+      "country": {
+        "code": "US",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "name": "USA"
+      },
+      "league": {
+        "id": 253,
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "name": "Major League Soccer",
+        "type": "League"
+      },
+      "seasons": [
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": false,
+              "statistics_players": false
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": false,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2012-12-01",
+          "start": "2012-03-10",
+          "year": 2012
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": false,
+              "statistics_players": false
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": false,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2013-12-07",
+          "start": "2013-03-02",
+          "year": 2013
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": false,
+              "statistics_players": false
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": false,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2014-12-07",
+          "start": "2014-03-08",
+          "year": 2014
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": false,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2015-12-06",
+          "start": "2015-03-07",
+          "year": 2015
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2016-12-11",
+          "start": "2016-03-06",
+          "year": 2016
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2017-12-09",
+          "start": "2017-03-04",
+          "year": 2017
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2018-12-09",
+          "start": "2018-03-03",
+          "year": 2018
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2019-11-10",
+          "start": "2019-03-02",
+          "year": 2019
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": false,
+            "odds": false,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": false,
+          "end": "2020-12-13",
+          "start": "2020-02-29",
+          "year": 2020
+        },
+        {
+          "coverage": {
+            "fixtures": {
+              "events": true,
+              "lineups": true,
+              "statistics_fixtures": true,
+              "statistics_players": true
+            },
+            "injuries": true,
+            "odds": true,
+            "players": true,
+            "predictions": true,
+            "standings": true,
+            "top_assists": true,
+            "top_cards": true,
+            "top_scorers": true
+          },
+          "current": true,
+          "end": "2021-11-07",
+          "start": "2021-04-17",
+          "year": 2021
+        }
+      ]
+    }
+  ],
+  "results": 1
+}

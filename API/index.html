@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  <!-- Querystring library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
+
+  <title>API</title>
+</head>
+
+<body>
+  <div class="main">
+    <h2 class="main-header">Foortball API Call</h2>
+
+    <p class="hide"><span>The call is: </span><span id="fixdata1"></span></p>
+    <p id="fixdata2"></p>
+
+    <div class="row">
+      <div class="column">
+        <h3>i95 Cup fixtures</h3>
+        <p id="demo"></p>
+        <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn">Select month:</button>
+          <div id="myDropdown" class="dropdown-content">
+            <div onclick="filterFixtures(1)">January</div>
+            <div onclick="filterFixtures(2)">February</div>
+            <div onclick="filterFixtures(3)">March</div>
+            <div onclick="filterFixtures(4)">April</div>
+            <div onclick="filterFixtures(5)">May</div>
+            <div onclick="filterFixtures(6)">June</div>
+            <div onclick="filterFixtures(7)">July</div>
+            <div onclick="filterFixtures(8)">August</div>
+            <div onclick="filterFixtures(9)">September</div>
+            <div onclick="filterFixtures(10)">October</div>
+            <div onclick="filterFixtures(11)">November</div>
+            <div onclick="filterFixtures(12)">December</div>
+          </div>
+      <button onclick="resetFixtures()" class="resetbtn">Reset</button>
+        </div>
+        <table class="fixtureTable" id="newFixtureTable">
+        </table>
+        <br />
+        <table class="hide" id="fixturedata">
+          <thead>
+            <th>Date</th>
+            <th>Matchup</th>
+            <th>Venue</th>
+            <th>Score</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+      <div class="column">
+        <h3>i95 Table</h3>
+        <table id="standingsData">
+          <thead>
+            <th onclick="sortTable(0)">Team</th>
+            <th onclick="sortTable(1)">PL</th>
+            <th onclick="sortTable(2)">W</th>
+            <th onclick="sortTable(3)">D</th>
+            <th onclick="sortTable(4)">L</th>
+            <th onclick="sortTable(5)">+/-</th>
+            <th onclick="sortTable(6)">GD</th>
+            <th onclick="sortTable(7)">PTS</th>
+            <th onclick="sortTable(8)">PPG</th>
+            <th onclick="sortTable(9)">Home</th>
+            <th onclick="sortTable(10)">Away</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p id="apiCall" class="hide"></p>
+  </div>
+  <!-- Import axios library -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Querystring library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <!-- Import our javascript file -->
+  <!--  <script src="mls.js"></script> -->
+  <script src="standings.js"></script>
+  <script src="cupfixturetable.js"></script>
+  <!--   <script src="combine.js"></script> -->
+  <!--  <script src="test.js"></script> -->
+  <script>
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+
+  <script>
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("standingsData");
+      switching = true;
+      // Set the sorting direction to ascending:
+      dir = "asc";
+      /* Make a loop that will continue until
+      no switching has been done: */
+      while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /* Loop through all table rows (except the
+        first, which contains table headers): */
+        for (i = 1; i < (rows.length - 1); i++) {
+          // Start by saying there should be no switching:
+          shouldSwitch = false;
+          /* Get the two elements you want to compare,
+          one from current row and one from the next: */
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /* Check if the two rows should switch place,
+          based on the direction, asc or desc: */
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /* If a switch has been marked, make the switch
+          and mark that a switch has been done: */
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          // Each time a switch is done, increase this count by 1:
+          switchcount++;
+        } else {
+          /* If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again. */
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>

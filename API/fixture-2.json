@@ -1,0 +1,220 @@
+{
+  "get": "fixtures/headtohead",
+  "parameters": {
+    "league": "253",
+    "season": "2021",
+    "h2h": "1609-1599"
+  },
+  "errors": [],
+  "results": 3,
+  "paging": {
+    "current": 1,
+    "total": 1
+  },
+  "response": [
+    {
+      "fixture": {
+        "id": 695373,
+        "referee": "A. Villarreal",
+        "timezone": "UTC",
+        "date": "2021-08-08T22:00:00+00:00",
+        "timestamp": 1628460000,
+        "periods": {
+          "first": 1628460000,
+          "second": 1628463600
+        },
+        "venue": {
+          "id": 1618,
+          "name": "Gillette Stadium",
+          "city": "Foxborough, Massachusetts"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 24"
+      },
+      "teams": {
+        "home": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": true
+        },
+        "away": {
+          "id": 1599,
+          "name": "Philadelphia Union",
+          "logo": "https://media.api-sports.io/football/teams/1599.png",
+          "winner": false
+        }
+      },
+      "goals": {
+        "home": 2,
+        "away": 1
+      },
+      "score": {
+        "halftime": {
+          "home": 2,
+          "away": 1
+        },
+        "fulltime": {
+          "home": 2,
+          "away": 1
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    },
+    {
+      "fixture": {
+        "id": 695192,
+        "referee": "T. Penso",
+        "timezone": "UTC",
+        "date": "2021-05-13T23:30:00+00:00",
+        "timestamp": 1620948600,
+        "periods": {
+          "first": 1620948600,
+          "second": 1620952200
+        },
+        "venue": {
+          "id": 1620,
+          "name": "Subaru Park",
+          "city": "Chester, Pennsylvania"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 7"
+      },
+      "teams": {
+        "home": {
+          "id": 1599,
+          "name": "Philadelphia Union",
+          "logo": "https://media.api-sports.io/football/teams/1599.png",
+          "winner": null
+        },
+        "away": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": null
+        }
+      },
+      "goals": {
+        "home": 1,
+        "away": 1
+      },
+      "score": {
+        "halftime": {
+          "home": 0,
+          "away": 0
+        },
+        "fulltime": {
+          "home": 1,
+          "away": 1
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    },
+    {
+      "fixture": {
+        "id": 695453,
+        "referee": "J. Marrufo",
+        "timezone": "UTC",
+        "date": "2021-09-03T23:30:00+00:00",
+        "timestamp": 1630711800,
+        "periods": {
+          "first": 1630711800,
+          "second": 1630715400
+        },
+        "venue": {
+          "id": 1620,
+          "name": "Subaru Park",
+          "city": "Chester, Pennsylvania"
+        },
+        "status": {
+          "long": "Match Finished",
+          "short": "FT",
+          "elapsed": 90
+        }
+      },
+      "league": {
+        "id": 253,
+        "name": "Major League Soccer",
+        "country": "USA",
+        "logo": "https://media.api-sports.io/football/leagues/253.png",
+        "flag": "https://media.api-sports.io/flags/us.svg",
+        "season": 2021,
+        "round": "Regular Season - 30"
+      },
+      "teams": {
+        "home": {
+          "id": 1599,
+          "name": "Philadelphia Union",
+          "logo": "https://media.api-sports.io/football/teams/1599.png",
+          "winner": false
+        },
+        "away": {
+          "id": 1609,
+          "name": "New England Revolution",
+          "logo": "https://media.api-sports.io/football/teams/1609.png",
+          "winner": true
+        }
+      },
+      "goals": {
+        "home": 0,
+        "away": 1
+      },
+      "score": {
+        "halftime": {
+          "home": 0,
+          "away": 1
+        },
+        "fulltime": {
+          "home": 0,
+          "away": 1
+        },
+        "extratime": {
+          "home": null,
+          "away": null
+        },
+        "penalty": {
+          "home": null,
+          "away": null
+        }
+      }
+    }
+  ]
+}
