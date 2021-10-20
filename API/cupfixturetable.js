@@ -1,27 +1,35 @@
-var filterInput = 0;
+var filterMonth = 0;
+var filterTeam = 0;
 
-function fetchData(){
+function fetchData() {
   fetch('combine.json')
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(fixdata) {
-    appendFixtureData(fixdata);
-  })
-  .catch(function(err) {
-    console.log('error: ' + err);
-  });
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(fixdata) {
+      appendFixtureData(fixdata);
+    })
+    .catch(function(err) {
+      console.log('error: ' + err);
+    });
 }
 fetchData();
 
-
-function filterFixtures(x) {
-  filterInput = x;
-  console.log(filterInput);
+function filterFixturesTeam(x) {
+  filterTeam = x;
+  console.log(filterTeam);
   fetchData();
 }
+
+function filterFixturesMonth(x) {
+  filterMonth = x;
+  console.log(filterMonth);
+  fetchData();
+}
+
 function resetFixtures(x) {
-  filterInput = 0;
+  filterMonth = 0;
+    filterTeam = 0;
   fetchData();
 }
 
@@ -29,100 +37,105 @@ function appendFixtureData(fixdata) {
   var table = document.getElementById("newFixtureTable");
   table.innerHTML = "";
   let mainContainer = document.getElementById("newFixtureTable");
+
   for (var i = 0; i < fixdata.length; i++) {
     var d = new Date(fixdata[i].fixture.date);
     var month = d.getMonth() + 1;
+    var hTeam = fixdata[i].teams.home.name;
+    var aTeam = fixdata[i].teams.away.name;
 
-    if (month == filterInput || filterInput == 0) {
-      let tr1 = document.createElement('tr');
-      let tddatevenue = document.createElement('td');
+    if (month == filterMonth || filterMonth == 0) {
+      if (filterTeam == 0 || hTeam == filterTeam || aTeam == filterTeam) {
+        let tr1 = document.createElement('tr');
+        let tddatevenue = document.createElement('td');
 
-      let tr2 = document.createElement('tr');
-      let tdfixture = document.createElement('td');
-      let divrow = document.createElement('div');
-      let divhomebox = document.createElement('div');
-      let divhomecontent = document.createElement('div');
-      let divscorebox = document.createElement('div');
-      let divscorecontent = document.createElement('div');
-      let divawaybox = document.createElement('div');
-      let divawaycontent = document.createElement('div');
+        let tr2 = document.createElement('tr');
+        let tdfixture = document.createElement('td');
+        let divrow = document.createElement('div');
+        let divhomebox = document.createElement('div');
+        let divhomecontent = document.createElement('div');
+        let divscorebox = document.createElement('div');
+        let divscorecontent = document.createElement('div');
+        let divawaybox = document.createElement('div');
+        let divawaycontent = document.createElement('div');
 
-      tr1.classList.add('fixtureTableRowDate');
+        tr1.classList.add('fixtureTableRowDate');
 
-      fixturedate = fixdata[i].fixture.date;
-      fixturedate = dateFormat(fixturedate);
-      venue = fixdata[i].fixture.venue.name;
-      venuecity = fixdata[i].fixture.venue.city;
-      tddatevenue.innerHTML = fixturedate + '<br/ >' + venue + ', ' + venuecity;
-      tddatevenue.classList.add('fixtureTable');
-      tddatevenue.classList.add('datevenue');
+        fixturedate = fixdata[i].fixture.date;
+        fixturedate = dateFormat(fixturedate);
+        venue = fixdata[i].fixture.venue.name;
+        venuecity = fixdata[i].fixture.venue.city;
+        tddatevenue.innerHTML = fixturedate + '<br/ >' + venue + ', ' + venuecity;
+        tddatevenue.classList.add('fixtureTable');
+        tddatevenue.classList.add('datevenue');
 
-      tr1.appendChild(tddatevenue);
+        tr1.appendChild(tddatevenue);
 
-      tr2.classList.add('fixtureTableRowFixture');
-      tdfixture.classList.add('fixtureTable');
-      divrow.classList.add('fixturebox');
+        tr2.classList.add('fixtureTableRowFixture');
+        tdfixture.classList.add('fixtureTable');
+        divrow.classList.add('fixturebox');
 
-      divhomebox.classList.add('homebox');
-      homeTeamImg = document.createElement('img');
-      homeTeamImg.src = fixdata[i].teams.home.logo;
-      homeTeamImg.classList.add("homeimg");
-      homeTeamImg.setAttribute("alt", fixdata[i].teams.home.name);
+        divhomebox.classList.add('homebox');
+        homeTeamImg = document.createElement('img');
+        homeTeamImg.src = fixdata[i].teams.home.logo;
+        homeTeamImg.classList.add("homeimg");
+        homeTeamImg.setAttribute("alt", fixdata[i].teams.home.name);
 
-      homeTeam = document.createElement('span');
-      homeTeam.innerHTML = fixdata[i].teams.home.name;
+        homeTeam = document.createElement('span');
+        homeTeam.innerHTML = fixdata[i].teams.home.name;
 
-      divhomecontent.appendChild(homeTeamImg);
-      divhomecontent.appendChild(homeTeam);
-      divhomecontent.classList.add('homecontent');
-      divhomebox.appendChild(divhomecontent);
+        divhomecontent.appendChild(homeTeamImg);
+        divhomecontent.appendChild(homeTeam);
+        divhomecontent.classList.add('homecontent');
+        divhomebox.appendChild(divhomecontent);
 
-      homeScore = fixdata[i].goals.home;
-      awayScore = fixdata[i].goals.away;
+        homeScore = fixdata[i].goals.home;
+        awayScore = fixdata[i].goals.away;
 
 
-      scoreline = document.createElement('div');
-      if (fixdata[i].fixture.status.short == "NS") {
-        score = timeFormat(fixdata[i].fixture.date);
-        scoreline.innerHTML = score;
-      } else if (homeScore == awayScore) {
-        scoreline.innerHTML = homeScore + '-' + awayScore;
-      } else if (homeScore > awayScore) {
-        scoreline.innerHTML = '<span class="win-home-icon"></span>' + homeScore + '-' + awayScore + '<span class="win-away-icon hide-icon">';
-      } else {
-        scoreline.innerHTML = '<span class="win-home-icon hide-icon"></span>' + homeScore + '-' + awayScore + '<span class="win-away-icon">';
-      };
+        scoreline = document.createElement('div');
+        if (fixdata[i].fixture.status.short == "NS") {
+          score = timeFormat(fixdata[i].fixture.date);
+          scoreline.innerHTML = score;
+        } else if (homeScore == awayScore) {
+          scoreline.innerHTML = homeScore + '-' + awayScore;
+        } else if (homeScore > awayScore) {
+          scoreline.innerHTML = '<span class="win-home-icon"></span>' + homeScore + '-' + awayScore + '<span class="win-away-icon hide-icon">';
+        } else {
+          scoreline.innerHTML = '<span class="win-home-icon hide-icon"></span>' + homeScore + '-' + awayScore + '<span class="win-away-icon">';
+        };
 
-      divscorecontent.appendChild(scoreline);
-      divscorecontent.classList.add('scorecontent');
-      divscorebox.classList.add('scorebox');
-      divscorebox.appendChild(divscorecontent);
+        divscorecontent.appendChild(scoreline);
+        divscorecontent.classList.add('scorecontent');
+        divscorebox.classList.add('scorebox');
+        divscorebox.appendChild(divscorecontent);
 
-      divawaybox.classList.add('awaybox');
-      awayTeamImg = document.createElement('img');
-      awayTeamImg.src = fixdata[i].teams.away.logo;
-      awayTeamImg.classList.add("awayimg");
-      awayTeamImg.setAttribute("alt", fixdata[i].teams.away.name);
+        divawaybox.classList.add('awaybox');
+        awayTeamImg = document.createElement('img');
+        awayTeamImg.src = fixdata[i].teams.away.logo;
+        awayTeamImg.classList.add("awayimg");
+        awayTeamImg.setAttribute("alt", fixdata[i].teams.away.name);
 
-      awayTeam = document.createElement('span');
-      awayTeam.innerHTML = fixdata[i].teams.away.name;
+        awayTeam = document.createElement('span');
+        awayTeam.innerHTML = fixdata[i].teams.away.name;
 
-      divawaycontent.appendChild(awayTeam);
-      divawaycontent.appendChild(awayTeamImg);
-      divawaycontent.classList.add('awaycontent');
-      divawaybox.appendChild(divawaycontent);
-      divawaybox.classList.add('awaybox');
+        divawaycontent.appendChild(awayTeam);
+        divawaycontent.appendChild(awayTeamImg);
+        divawaycontent.classList.add('awaycontent');
+        divawaybox.appendChild(divawaycontent);
+        divawaybox.classList.add('awaybox');
 
-      divrow.appendChild(divhomecontent);
-      divrow.appendChild(divscorebox);
-      divrow.appendChild(divawaycontent)
+        divrow.appendChild(divhomecontent);
+        divrow.appendChild(divscorebox);
+        divrow.appendChild(divawaycontent)
 
-      tdfixture.appendChild(divrow);
+        tdfixture.appendChild(divrow);
 
-      tr2.appendChild(tdfixture);
+        tr2.appendChild(tdfixture);
 
-      mainContainer.appendChild(tr1);
-      mainContainer.appendChild(tr2);
+        mainContainer.appendChild(tr1);
+        mainContainer.appendChild(tr2);
+      }
     }
   }
 }

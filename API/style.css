@@ -11,6 +11,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("background-2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 label, textarea {
@@ -20,6 +23,7 @@ label, textarea {
 table, td, th {
   border: 1px solid #ddd;
   text-align: left;
+  background-color: #fff;
 }
 
 table {
@@ -33,12 +37,35 @@ th, td {
   padding: 5px;
 }
 
+h1 {
+  font-size: 3em;
+  font-weight: 700;
+  color: #0c4675;
+  line-height: 1.25;
+  margin-bottom: 1em;
+}
+
 h3 {
   font-size: 16px;
   font-weight: 700;
   color: #0c4675;
   line-height: 1.25;
   margin-bottom: 1em;
+}
+
+text {
+  font-weight: bold;
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+svg {
+  margin-right: 6px;
+}
+
+.calendar {
+  display: inline;
+  cursor: pointer;
 }
 
 .button {
@@ -152,9 +179,12 @@ h3 {
 }
 
 .column {
-  float: left;
-  width: 50%;
-  padding: 5px;
+  float: none;
+  width: 640px;
+  height: auto;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
 }
 
 /* Clearfix (clear floats) */
@@ -217,8 +247,8 @@ h3 {
 
 .datevenue {
   text-transform: uppercase;
-  font-size: .75em;
-  color: #9a9a9a;
+  font-size: .8em;
+  color: #7a7a7a;
   text-align: center;
   background-color: #f7f7f7
 }
@@ -351,4 +381,12 @@ h3 {
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {
   display: block;
+}
+
+.filterTeams {
+  height: 40px;
+  width: 40px;
+  display: inline;
+  cursor: pointer;
+  margin-right: 30px;
 }

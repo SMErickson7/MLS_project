@@ -20,49 +20,14 @@
 
 <body>
   <div class="main">
-    <h2 class="main-header">Foortball API Call</h2>
+    <h1 class="main-header">I-95 Cup</h1>
 
     <p class="hide"><span>The call is: </span><span id="fixdata1"></span></p>
     <p id="fixdata2"></p>
 
     <div class="row">
       <div class="column">
-        <h3>i95 Cup fixtures</h3>
-        <p id="demo"></p>
-        <div class="dropdown">
-          <button onclick="myFunction()" class="dropbtn">Select month:</button>
-          <div id="myDropdown" class="dropdown-content">
-            <div onclick="filterFixtures(1)">January</div>
-            <div onclick="filterFixtures(2)">February</div>
-            <div onclick="filterFixtures(3)">March</div>
-            <div onclick="filterFixtures(4)">April</div>
-            <div onclick="filterFixtures(5)">May</div>
-            <div onclick="filterFixtures(6)">June</div>
-            <div onclick="filterFixtures(7)">July</div>
-            <div onclick="filterFixtures(8)">August</div>
-            <div onclick="filterFixtures(9)">September</div>
-            <div onclick="filterFixtures(10)">October</div>
-            <div onclick="filterFixtures(11)">November</div>
-            <div onclick="filterFixtures(12)">December</div>
-          </div>
-      <button onclick="resetFixtures()" class="resetbtn">Reset</button>
-        </div>
-        <table class="fixtureTable" id="newFixtureTable">
-        </table>
-        <br />
-        <table class="hide" id="fixturedata">
-          <thead>
-            <th>Date</th>
-            <th>Matchup</th>
-            <th>Venue</th>
-            <th>Score</th>
-          </thead>
-          <tbody>
-          </tbody>
-        </table>
-      </div>
-      <div class="column">
-        <h3>i95 Table</h3>
+        <h3>I-95 Cup Table</h3>
         <table id="standingsData">
           <thead>
             <th onclick="sortTable(0)">Team</th>
@@ -82,7 +47,169 @@
         </table>
       </div>
     </div>
-    <p id="apiCall" class="hide"></p>
+    <div class="row">
+      <div class="column">
+        <h3>I-95 Cup fixtures</h3>
+        <div style="text-align: center; padding:10px 4px;">
+        <img src="https://media.api-sports.io/football/teams/1609.png" class="filterTeams" onclick="filterFixturesTeam('New England Revolution')">
+        <img src="https://media.api-sports.io/football/teams/1602.png" class="filterTeams" onclick="filterFixturesTeam('New York Red Bulls')">
+        <img src="https://media.api-sports.io/football/teams/1604.png" class="filterTeams" onclick="filterFixturesTeam('New York City FC')">
+        <img src="https://media.api-sports.io/football/teams/1599.png" class="filterTeams" onclick="filterFixturesTeam('Philadelphia Union')">
+        <img src="https://media.api-sports.io/football/teams/1615.png" class="filterTeams" onclick="filterFixturesTeam('DC United')">
+        <img src="https://media.api-sports.io/football/teams/9568.png" class="filterTeams" onclick="filterFixturesTeam('Inter Miami')">
+</div>
+        <div style="text-align: center; padding:10px 4px;">
+          <div class="calendar" onclick="filterFixturesMonth(1)">
+            <svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jan</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg>
+          </div>
+          <div class="calendar" onclick="filterFixturesMonth(2)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">feb</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(3)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">mar</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(4)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">apr</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(5)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">may</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(6)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jun</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(7)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jul</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(8)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">aug</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(9)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">sep</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(10)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">oct</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(11)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">nov</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(12)"><svg width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:1" />
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <rect x="0" y="5" rx="0" ry="0" width="40" height="8" style="fill:#AF1E2D;opacity:1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">dec</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" style="fill:#E3E3E3;opacity:.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+        </div>
+        <br />
+        <div class="main-header">
+          <!--           <button onclick="myFunction()" class="dropbtn">Select month:</button>
+          <div id="myDropdown" class="dropdown-content">
+            <div onclick="filterFixturesMonth(1)">January</div>
+            <div onclick="filterFixturesMonth(2)">February</div>
+            <div onclick="filterFixturesMonth(3)">March</div>
+            <div onclick="filterFixturesMonth(4)">April</div>
+            <div onclick="filterFixturesMonth(5)">May</div>
+            <div onclick="filterFixturesMonth(6)">June</div>
+            <div onclick="filterFixturesMonth(7)">July</div>
+            <div onclick="filterFixturesMonth(8)">August</div>
+            <div onclick="filterFixturesMonth(9)">September</div>
+            <div onclick="filterFixturesMonth(10)">October</div>
+            <div onclick="filterFixturesMonth(11)">November</div>
+            <div onclick="filterFixturesMonth(12)">December</div>
+          </div>
+-->
+          <button onclick="resetFixtures()" class="resetbtn">Reset</button>
+        </div>
+        <table class="fixtureTable" id="newFixtureTable">
+        </table>
+        <br />
+        <table class="hide" id="fixturedata">
+          <thead>
+            <th>Date</th>
+            <th>Matchup</th>
+            <th>Venue</th>
+            <th>Score</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
   </div>
   <!-- Import axios library -->
   <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
