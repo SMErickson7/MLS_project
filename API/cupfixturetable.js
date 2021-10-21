@@ -15,21 +15,31 @@ function fetchData() {
 }
 fetchData();
 
-function filterFixturesTeam(x) {
-  filterTeam = x;
-  console.log(filterTeam);
+function filterFixturesTeam(x,y) {
+  if (filterTeam == x) {
+    filterTeam = 0;
+  } else {
+    filterTeam = x;
+  }
+  var logoChange = document.getElementById(y);
+  logoChange.classList.toggle('filterTeams-active');
   fetchData();
 }
 
-function filterFixturesMonth(x) {
-  filterMonth = x;
-  console.log(filterMonth);
+function filterFixturesMonth(x,y) {
+  if (filterMonth == x) {
+    filterMonth = 0;
+  } else {
+    filterMonth = x;
+  }
+  var monthChange = document.getElementById(y);
+  monthChange.classList.toggle('filterMonth-active');
   fetchData();
 }
 
 function resetFixtures(x) {
   filterMonth = 0;
-    filterTeam = 0;
+  filterTeam = 0;
   fetchData();
 }
 
@@ -37,7 +47,7 @@ function appendFixtureData(fixdata) {
   var table = document.getElementById("newFixtureTable");
   table.innerHTML = "";
   let mainContainer = document.getElementById("newFixtureTable");
-
+  console.log("var in appendFixtureData: ", filterMonth);
   for (var i = 0; i < fixdata.length; i++) {
     var d = new Date(fixdata[i].fixture.date);
     var month = d.getMonth() + 1;

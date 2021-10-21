@@ -129,22 +129,6 @@ svg {
   text-align: center;
 }
 
-.pos {
-  color: green;
-}
-
-.neg {
-  color: darkred;
-}
-
-.neutral {
-  color: gray
-}
-
-.invisible {
-  display: none;
-}
-
 .box {
   display: flex;
   align-items: center;
@@ -192,10 +176,6 @@ svg {
   content: "";
   clear: both;
   display: table;
-}
-
-.green {
-  color: #0fa12b;
 }
 
 #standingsData th, #standingsData td {
@@ -389,4 +369,37 @@ svg {
   display: inline;
   cursor: pointer;
   margin-right: 30px;
+  filter: saturate(10%);
+}
+
+.filterTeams:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.35, 1.35) translateZ(0);
+  filter: saturate(100%);
+}
+
+.filterTeams-active {
+  filter: saturate(100%);
+  transform: scale(1.35, 1.35) translateZ(0);
+}
+
+svg:hover rect.changeclr {
+  fill: rgb(0, 63, 135);
+  transition: all 0.3s ease;
+}
+
+svg:hover {
+  transition: all 0.3s ease;
+  transform: scale(1.1, 1.1) translateZ(0);
+}
+
+.filterMonth-active {
+  transform: scale(1.1, 1.1) translateZ(0);
+}
+
+.monthbar {
+  display: block;
+  width: 40px;
+  height: 4px;
+  background-color: rgb(0, 63, 135);
 }
