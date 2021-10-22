@@ -1,6 +1,8 @@
 var filterMonth = 0;
 var filterTeam = 0;
 
+var fgTeams = ['New England Revolution', 'New York Red Bulls', 'New York City FC', 'Philadelphia Union', 'DC United', 'Inter Miami'];
+
 function fetchData() {
   fetch('combine.json')
     .then(function(response) {
@@ -8,6 +10,7 @@ function fetchData() {
     })
     .then(function(fixdata) {
       appendFixtureData(fixdata);
+      appendFormGuide(fixdata);
     })
     .catch(function(err) {
       console.log('error: ' + err);
@@ -15,7 +18,7 @@ function fetchData() {
 }
 fetchData();
 
-function filterFixturesTeam(x,y) {
+function filterFixturesTeam(x, y) {
   if (filterTeam == x) {
     filterTeam = 0;
   } else {
@@ -26,14 +29,20 @@ function filterFixturesTeam(x,y) {
   fetchData();
 }
 
-function filterFixturesMonth(x,y) {
+function filterFixturesMonth(x, y) {
   if (filterMonth == x) {
     filterMonth = 0;
   } else {
     filterMonth = x;
   }
   var monthChange = document.getElementById(y);
-  monthChange.classList.toggle('filterMonth-active');
+  var rect1 = y.concat("2");
+  var rect2 = y.concat("3");
+  var rect1Change = document.getElementById(rect1);
+  var rect2Change = document.getElementById(rect2);
+  monthChange.classList.toggle('toggleMonth');
+  rect1Change.classList.toggle('toggleMonthHeader');
+  rect2Change.classList.toggle('toggleMonthHeader');
   fetchData();
 }
 
@@ -44,10 +53,13 @@ function resetFixtures(x) {
 }
 
 function appendFixtureData(fixdata) {
+  function comp(a, b) {
+    return new Date(b.fixture.date).getTime() - new Date(a.fixture.date).getTime();
+    }
+  fixdata.sort(comp);
   var table = document.getElementById("newFixtureTable");
   table.innerHTML = "";
   let mainContainer = document.getElementById("newFixtureTable");
-  console.log("var in appendFixtureData: ", filterMonth);
   for (var i = 0; i < fixdata.length; i++) {
     var d = new Date(fixdata[i].fixture.date);
     var month = d.getMonth() + 1;
@@ -150,6 +162,31 @@ function appendFixtureData(fixdata) {
   }
 }
 
+
+function appendFormGuide(fixdata) {
+  function comp(a, b) {
+    return new Date(b.fixture.date).getTime() - new Date(a.fixture.date).getTime();
+    }
+  fixdata = fixdata.sort(comp);
+  let mainContainer = document.getElementById("formGuide");
+  for (var i = 0; i < fgTeams.length; i++) {
+    for (var j = 0; j < fixdata.length; j++) {
+      fixturedate = fixdata[j].fixture.date;
+      fixturedate = dateFormat(fixturedate);
+      if (fgTeams[i] == fixdata[j].teams.home.name || fgTeams == fixdata[j].teams.away.name) {
+        if (fixdata[j].fixture.status.elapsed == null) {
+//          console.log("grey -", fgTeams[i], fixturedate);
+        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home > fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away > fixdata[j].goals.home)) {
+//          console.log("green winner", fgTeams[i], fixturedate);
+        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home < fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away < fixdata[j].goals.home)) {
+//          console.log("red loser", fgTeams[i], fixturedate);
+        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home == fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away == fixdata[j].goals.home)) {
+//          console.log("orange draw", fgTeams[i], fixturedate);
+        }
+      }
+    }
+  }
+}
 
 function dateFormat(x) {
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];

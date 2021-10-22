@@ -20,11 +20,48 @@
 
 <body>
   <div class="main">
-    <h1 class="main-header">I-95 Cup</h1>
-
+    <div class="row">
+      <div class="column">
+        <h1 class="main-header">I-95 Cup</h1>
+      </div>
+    </div>
     <p class="hide"><span>The call is: </span><span id="fixdata1"></span></p>
     <p id="fixdata2"></p>
-
+    <div class="row">
+      <div class="column">
+        <h3>I-95 Form Guide</h3>
+        <div id="formGuide">
+          <div class="fg-row">
+            <div class="fg-cell fg-win">
+              <div class="fg-content">W</div>
+            </div>
+            <div class="fg-cell fg-loss">
+              <div class="fg-content">L</div>
+            </div>
+            <div class="fg-cell fg-draw">
+              <div class="fg-content">D</div>
+            </div>
+            <div class="fg-cell fg-match">
+              <div class="fg-content">-</div>
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg-cell fg-win">
+              <div class="fg-content">W</div>
+            </div>
+            <div class="fg-cell fg-loss">
+              <div class="fg-content">L</div>
+            </div>
+            <div class="fg-cell fg-draw">
+              <div class="fg-content">D</div>
+            </div>
+            <div class="fg-cell fg-match">
+              <div class="fg-content">-</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <div class="row">
       <div class="column">
         <h3>I-95 Cup Table</h3>
@@ -59,124 +96,124 @@
           <img id="mia" src="https://media.api-sports.io/football/teams/9568.png" class="filterTeams" onclick="filterFixturesTeam('Inter Miami', 'mia')">
         </div>
         <div style="text-align: center; padding:10px 4px;">
-          <div id="jan" class="calendar" onclick="filterFixturesMonth(1, 'jan')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(1, 'jan')">
+            <svg id="jan" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <circle cx="12" cy="7" r="2.5" fill="white"/>
+              <rect id="jan2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jan3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jan</text>
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="feb" class="calendar" onclick="filterFixturesMonth(2, 'feb')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(2, 'feb')">
+            <svg id="feb" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="feb2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="feb3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">feb</text>
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="mar" class="calendar" onclick="filterFixturesMonth(3, 'mar')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(3, 'mar')">
+            <svg id="mar" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="mar2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="mar3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">mar</text>
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="apr" class="calendar" onclick="filterFixturesMonth(4, 'apr')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(4, 'apr')">
+            <svg id="apr" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="apr2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="apr3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">apr</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="may" class="calendar" onclick="filterFixturesMonth(5, 'may')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(5, 'may')">
+            <svg id="may" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="may2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="may3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">may</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="jun" class="calendar" onclick="filterFixturesMonth(6, 'jun')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(6, 'jun')">
+            <svg id="jun" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jum2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jum3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jun</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="jul" class="calendar" onclick="filterFixturesMonth(7, 'jul')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(7, 'jul')">
+            <svg id="jul" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jul2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jul3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jul</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="aug" class="calendar" onclick="filterFixturesMonth(8, 'aug')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(8, 'aug')">
+            <svg id="aug" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="aug2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="aug3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">aug</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="sep" class="calendar" onclick="filterFixturesMonth(9, 'sep')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(9, 'sep')">
+            <svg id="sep" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="sep2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="sep3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">sep</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="oct" class="calendar" onclick="filterFixturesMonth(10, 'oct')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(10, 'oct')">
+            <svg id="oct" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="oct2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="oct3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">oct</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="nov" class="calendar" onclick="filterFixturesMonth(11, 'nov')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(11, 'nov')">
+            <svg id="nov" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="nov2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="nov3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">nov</text>
               Sorry, your browser does not support inline SVG.
             </svg></div>
-          <div id="dec" class="calendar" onclick="filterFixturesMonth(12, 'dec')">
-            <svg width="40" height="40">
+          <div class="calendar" onclick="filterFixturesMonth(12, 'dec')">
+            <svg id="dec" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="dec2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="dec3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">dec</text>
