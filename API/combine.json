@@ -140,14 +140,14 @@
       "date": "2021-10-23T23:30:00+00:00",
       "id": 695545,
       "periods": {
-        "first": null,
-        "second": null
+        "first": 1635031800,
+        "second": 1635035400
       },
-      "referee": null,
+      "referee": "Joseph Dickerson, USA",
       "status": {
-        "elapsed": null,
-        "long": "Not Started",
-        "short": "NS"
+        "elapsed": 90,
+        "long": "Match Finished",
+        "short": "FT"
       },
       "timestamp": 1635031800,
       "timezone": "UTC",
@@ -158,8 +158,8 @@
       }
     },
     "goals": {
-      "away": null,
-      "home": null
+      "away": 0,
+      "home": 6
     },
     "league": {
       "country": "USA",
@@ -176,12 +176,12 @@
         "home": null
       },
       "fulltime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 6
       },
       "halftime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 4
       },
       "penalty": {
         "away": null,
@@ -193,13 +193,13 @@
         "id": 1615,
         "logo": "https://media.api-sports.io/football/teams/1615.png",
         "name": "DC United",
-        "winner": null
+        "winner": false
       },
       "home": {
         "id": 1604,
         "logo": "https://media.api-sports.io/football/teams/1604.png",
         "name": "New York City FC",
-        "winner": null
+        "winner": true
       }
     }
   },

@@ -16,6 +16,7 @@ fetch('combine.json')
   });
 
 
+
 const cupStandingData = [];
 
 var teams = ["New York City FC", "DC United", "New York Red Bulls", "New England Revolution", "Philadelphia Union", "Inter Miami"];
@@ -26,6 +27,7 @@ function addTeams() {
       "name": teams[i]
     };
     cupStandingData.push(teamname);
+
   }
 }
 
@@ -34,7 +36,7 @@ function calculateGames(gameData) {
     var games = 0;
     for (var x = 0; x < gameData.length; x++) {
       if (teams[i] == gameData[x].teams.home.name || teams[i] == gameData[x].teams.away.name) {
-        if (gameData[x].teams.home.winner != null) {
+        if (gameData[x].fixture.status.short == "FT") {
           games = games + 1;
         }
       }
@@ -45,6 +47,7 @@ function calculateGames(gameData) {
       }
     }
   }
+
 }
 
 function calculateWins(gameData) {
@@ -71,6 +74,7 @@ function calculateWins(gameData) {
       }
     }
   }
+
 }
 
 function calculateLoss(gameData) {
@@ -97,6 +101,7 @@ function calculateLoss(gameData) {
       }
     }
   }
+
 }
 
 function calculateDraw(gameData) {
@@ -123,6 +128,7 @@ function calculateDraw(gameData) {
       }
     }
   }
+
 }
 
 function calculateGF(gameData) {
@@ -144,6 +150,7 @@ function calculateGF(gameData) {
       }
     }
   }
+
 }
 
 function calculateGA(gameData) {
@@ -162,6 +169,7 @@ function calculateGA(gameData) {
         cupStandingData[y].homeGA = homeGA;
         cupStandingData[y].awayGA = awayGA;
         cupStandingData[y].GA = homeGA + awayGA;
+        cupStandingData[y].GD = cupStandingData[y].GF - cupStandingData[y].GA
       }
     }
   }
@@ -175,9 +183,14 @@ function calculatePTS(gameData) {
     cupStandingData[i].pts = ptsCalc;
     cupStandingData[i].ppg = ppgCalc;
   }
-  cupStandingData.sort(function(obj1, obj2) {
-    return obj2.ppg - obj1.ppg;
-    console.log("Sort comppleted");
+  cupStandingData.sort(function(a, b) {
+    var dPPG = b.ppg - a.ppg;
+    if (dPPG) return dPPG;
+    var dGD = b.GD - a.GD;
+    if (dGD) return dGD;
+    var dGF = b.GF - a.GD;
+    return dGF;
+
   });
 }
 
@@ -234,9 +247,3 @@ function appendStandingsTable() {
     mainContainer.appendChild(tr);
   }
 }
-
-const myJSON = JSON.stringify(cupStandingData);
-document.getElementById("fixdata1").innerHTML = myJSON;
-//console.log(cupStandingData);
-
-//console.log("Final: ", cupStandingData);

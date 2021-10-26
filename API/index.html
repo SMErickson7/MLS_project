@@ -25,44 +25,26 @@
         <h1 class="main-header">I-95 Cup</h1>
       </div>
     </div>
-    <p class="hide"><span>The call is: </span><span id="fixdata1"></span></p>
-    <p id="fixdata2"></p>
-    <div class="row">
+<div class="row">
+  <div class="column">
+    <div class="tab">
+      <button class="tablinks" onclick="standingsTab(event, 'I95cupTable')">I-95 Cup Table</button>
+      <button class="tablinks" onclick="standingsTab(event, 'I95formGuide')">I-95 Cup Form Guide</button>
+      <button class="tablinks" onclick="standingsTab(event, 'I95fixtures')">I-95 Cup Fixtures</button>
+    </div>
+  </div>
+</div>
+
+    <div id="I95formGuide" class="row tabcontent">
       <div class="column">
-        <h3>I-95 Form Guide</h3>
-        <div id="formGuide">
-          <div class="fg-row">
-            <div class="fg-cell fg-win">
-              <div class="fg-content">W</div>
-            </div>
-            <div class="fg-cell fg-loss">
-              <div class="fg-content">L</div>
-            </div>
-            <div class="fg-cell fg-draw">
-              <div class="fg-content">D</div>
-            </div>
-            <div class="fg-cell fg-match">
-              <div class="fg-content">-</div>
-            </div>
-          </div>
-          <div class="fg-row">
-            <div class="fg-cell fg-win">
-              <div class="fg-content">W</div>
-            </div>
-            <div class="fg-cell fg-loss">
-              <div class="fg-content">L</div>
-            </div>
-            <div class="fg-cell fg-draw">
-              <div class="fg-content">D</div>
-            </div>
-            <div class="fg-cell fg-match">
-              <div class="fg-content">-</div>
-            </div>
+        <div>
+          <h3>I-95 Form Guide</h3>
+          <div id="formGuide">
           </div>
         </div>
       </div>
     </div>
-    <div class="row">
+    <div id="I95cupTable" class="row tabcontent">
       <div class="column">
         <h3>I-95 Cup Table</h3>
         <table id="standingsData">
@@ -84,7 +66,7 @@
         </table>
       </div>
     </div>
-    <div class="row">
+    <div id="I95fixtures" class="row tabcontent">
       <div class="column">
         <h3>I-95 Cup fixtures</h3>
         <div style="text-align: center; padding:10px 4px;">
@@ -152,8 +134,8 @@
           <div class="calendar" onclick="filterFixturesMonth(6, 'jun')">
             <svg id="jun" width="40" height="40">
               <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
-              <rect id="jum2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
-              <rect id="jum3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jun2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jun3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
               <circle cx="12" cy="7" r="2.5" fill="white" />
               <circle cx="28" cy="7" r="2.5" fill="white" />
               <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jun</text>
@@ -224,22 +206,6 @@
         <br />
 
         <div class="main-header">
-          <!--           <button onclick="myFunction()" class="dropbtn">Select month:</button>
-          <div id="myDropdown" class="dropdown-content">
-            <div onclick="filterFixturesMonth(1)">January</div>
-            <div onclick="filterFixturesMonth(2)">February</div>
-            <div onclick="filterFixturesMonth(3)">March</div>
-            <div onclick="filterFixturesMonth(4)">April</div>
-            <div onclick="filterFixturesMonth(5)">May</div>
-            <div onclick="filterFixturesMonth(6)">June</div>
-            <div onclick="filterFixturesMonth(7)">July</div>
-            <div onclick="filterFixturesMonth(8)">August</div>
-            <div onclick="filterFixturesMonth(9)">September</div>
-            <div onclick="filterFixturesMonth(10)">October</div>
-            <div onclick="filterFixturesMonth(11)">November</div>
-            <div onclick="filterFixturesMonth(12)">December</div>
-          </div>
--->
           <button onclick="resetFixtures()" class="resetbtn">Reset</button>
         </div>
         <table class="fixtureTable" id="newFixtureTable">
@@ -266,27 +232,31 @@
   <!-- Import our javascript file -->
   <!--  <script src="mls.js"></script> -->
   <script src="standings.js"></script>
+  <script src="formguide.js"></script>
   <script src="cupfixturetable.js"></script>
   <!--   <script src="combine.js"></script> -->
   <!--  <script src="test.js"></script> -->
   <script>
-    function myFunction() {
-      document.getElementById("myDropdown").classList.toggle("show");
+  function standingsTab(evt, tabData) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
     }
 
-    // Close the dropdown menu if the user clicks outside of it
-    window.onclick = function(event) {
-      if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-          var openDropdown = dropdowns[i];
-          if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-          }
-        }
-      }
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace(" active", "");
     }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tabData).style.display = "block";
+    evt.currentTarget.className += " active";
+  }
   </script>
 
 

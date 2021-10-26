@@ -10,7 +10,6 @@ function fetchData() {
     })
     .then(function(fixdata) {
       appendFixtureData(fixdata);
-      appendFormGuide(fixdata);
     })
     .catch(function(err) {
       console.log('error: ' + err);
@@ -162,31 +161,6 @@ function appendFixtureData(fixdata) {
   }
 }
 
-
-function appendFormGuide(fixdata) {
-  function comp(a, b) {
-    return new Date(b.fixture.date).getTime() - new Date(a.fixture.date).getTime();
-    }
-  fixdata = fixdata.sort(comp);
-  let mainContainer = document.getElementById("formGuide");
-  for (var i = 0; i < fgTeams.length; i++) {
-    for (var j = 0; j < fixdata.length; j++) {
-      fixturedate = fixdata[j].fixture.date;
-      fixturedate = dateFormat(fixturedate);
-      if (fgTeams[i] == fixdata[j].teams.home.name || fgTeams == fixdata[j].teams.away.name) {
-        if (fixdata[j].fixture.status.elapsed == null) {
-//          console.log("grey -", fgTeams[i], fixturedate);
-        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home > fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away > fixdata[j].goals.home)) {
-//          console.log("green winner", fgTeams[i], fixturedate);
-        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home < fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away < fixdata[j].goals.home)) {
-//          console.log("red loser", fgTeams[i], fixturedate);
-        } else if ((fgTeams[i] == fixdata[j].teams.home.name && fixdata[j].goals.home == fixdata[j].goals.away) || (fgTeams[i] == fixdata[j].teams.away.name && fixdata[j].goals.away == fixdata[j].goals.home)) {
-//          console.log("orange draw", fgTeams[i], fixturedate);
-        }
-      }
-    }
-  }
-}
 
 function dateFormat(x) {
   const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
