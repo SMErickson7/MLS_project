@@ -72,14 +72,14 @@
       "date": "2021-10-28T00:30:00+00:00",
       "id": 695560,
       "periods": {
-        "first": null,
-        "second": null
+        "first": 1635377400,
+        "second": 1635381000
       },
-      "referee": null,
+      "referee": "Rubiel Vazquez, USA",
       "status": {
-        "elapsed": null,
-        "long": "Not Started",
-        "short": "NS"
+        "long": "Match Finished",
+        "short": "FT",
+        "elapsed": 90
       },
       "timestamp": 1635381000,
       "timezone": "UTC",
@@ -90,8 +90,8 @@
       }
     },
     "goals": {
-      "away": null,
-      "home": null
+      "away": 0,
+      "home": 1
     },
     "league": {
       "country": "USA",
@@ -108,12 +108,12 @@
         "home": null
       },
       "fulltime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "halftime": {
-        "away": null,
-        "home": null
+        "away": 0,
+        "home": 1
       },
       "penalty": {
         "away": null,
@@ -125,13 +125,13 @@
         "id": 1602,
         "logo": "https://media.api-sports.io/football/teams/1602.png",
         "name": "New York Red Bulls",
-        "winner": null
+        "winner": false
       },
       "home": {
         "id": 1615,
         "logo": "https://media.api-sports.io/football/teams/1615.png",
         "name": "DC United",
-        "winner": null
+        "winner": true
       }
     }
   },
