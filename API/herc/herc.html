@@ -9,20 +9,20 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <script src="test.js"></script>
   <link rel="stylesheet" href="style.css">
   <!-- Querystring library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
   <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
 
-  <title>API</title>
+  <title>Herculez Gomez Cup</title>
 </head>
 
 <body>
   <div class="main">
     <div class="row">
       <div class="column">
-        <h1 class="main-header">Hercules Gomez Cup</h1>
+        <h1 class="main-header">Herculez Gomez Cup</h1>
+        <p>According to former San Diego Gauchos forward, Herculez Gomez believes the true measure of success in MLS is a team's record against opponents with 13+ wins. This page will update when teams achieve 13+ wins.<br /><strong>Who will take home the inaugural Herculez Gomez Cup?</strong></p>
       </div>
     </div>
     <div class="row">
@@ -38,7 +38,7 @@
     <div id="I95formGuide" class="row tabcontent">
       <div class="column">
         <div>
-          <h3>Hercules Gomez Form Guide</h3>
+          <h3>Herculez Gomez Form Guide</h3>
           <div id="formGuide">
           </div>
         </div>
@@ -46,7 +46,7 @@
     </div>
     <div id="I95cupTable" class="row tabcontent" style="display: block">
       <div class="column">
-        <h3>Hercules Gomez Cup Table</h3>
+        <h3>Herculez Gomez Cup Table</h3>
         <table id="standingsData">
           <thead>
             <th onclick="sortTable(0)">Team</th>
@@ -68,18 +68,19 @@
     </div>
     <div id="I95fixtures" class="row tabcontent">
       <div class="column">
-        <h3>Hercules Gomez Cup fixtures</h3>
-        <div style="text-align: center; padding:10px 4px;">
-          <img id="ner" src="https://media.api-sports.io/football/teams/1609.png" class="filterTeams" onclick="filterFixturesTeam('New England Revolution', 'ner')">
-          <img id="skc" src="https://media.api-sports.io/football/teams/1611.png" class="filterTeams" onclick="filterFixturesTeam('Sporting Kansas City', 'skc')">
-          <img id="sea" src="https://media.api-sports.io/football/teams/1595.png" class="filterTeams" onclick="filterFixturesTeam('Seattle Sounders', 'sea')">
+        <h3>Herculez Gomez Cup fixtures</h3>
+        <div class="fixtureLogos">
           <img id="col" src="https://media.api-sports.io/football/teams/1610.png" class="filterTeams" onclick="filterFixturesTeam('Colorado Rapids', 'col')">
+          <img id="dcu" src="https://media.api-sports.io/football/teams/1615.png" class="filterTeams" onclick="filterFixturesTeam('DC United', 'dcu')">
+          <img id="lag" src="https://media.api-sports.io/football/teams/1605.png" class="filterTeams" onclick="filterFixturesTeam('Los Angeles Galaxy', 'lag')">
+          <img id="ner" src="https://media.api-sports.io/football/teams/1609.png" class="filterTeams" onclick="filterFixturesTeam('New England Revolution', 'ner')">
+          <img id="nycfc" src="https://media.api-sports.io/football/teams/1604.png" class="filterTeams" onclick="filterFixturesTeam('New York City FC', 'nycfc')">
+          <img id="nyrb" src="https://media.api-sports.io/football/teams/1602.png" class="filterTeams" onclick="filterFixturesTeam('New York Red Bulls', 'nyrb')">
           <img id="phi" src="https://media.api-sports.io/football/teams/1599.png" class="filterTeams" onclick="filterFixturesTeam('Philadelphia Union', 'phi')">
           <img id="por" src="https://media.api-sports.io/football/teams/1617.png" class="filterTeams" onclick="filterFixturesTeam('Portland Timbers', 'por')">
-          <img id="nycfc" src="https://media.api-sports.io/football/teams/1604.png" class="filterTeams" onclick="filterFixturesTeam('New York City FC', 'nycfc')">
-          <img id="lag" src="https://media.api-sports.io/football/teams/1605.png" class="filterTeams" onclick="filterFixturesTeam('Los Angeles Galaxy', 'lag')">
           <img id="rsl" src="https://media.api-sports.io/football/teams/1606.png" class="filterTeams" onclick="filterFixturesTeam('Real Salt Lake', 'rsl')">
-          <img id="dcu" src="https://media.api-sports.io/football/teams/1615.png" class="filterTeams" onclick="filterFixturesTeam('DC United', 'dcu')">
+          <img id="sea" src="https://media.api-sports.io/football/teams/1595.png" class="filterTeams" onclick="filterFixturesTeam('Seattle Sounders', 'sea')">
+          <img id="skc" src="https://media.api-sports.io/football/teams/1611.png" class="filterTeams" onclick="filterFixturesTeam('Sporting Kansas City', 'skc')">
         </div>
         <div style="text-align: center; padding:10px 4px;">
           <div class="calendar" onclick="filterFixturesMonth(1, 'jan')">
