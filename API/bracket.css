@@ -1,5 +1,5 @@
 .palette {
-  --g:00px; /* The gap between shapes*/
+  --g:0px; /* The gap between shapes*/
   --s:20vh; /* the size*/
 
   height: 90vh;
@@ -19,35 +19,66 @@
   clip-path:polygon(
     calc(50% + var(--g)/2) 50%,
     calc(50% + var(--g)/2) 0%,
-    100% 0%,
-    100% calc(0% - var(--g)/2),
+    calc(70.717% - var(--g)/2) 0%,
     50% calc(50% - var(--g)/2));
 }
 .color1 {
-  transform:rotate(45deg); /* 360/8 */
-  --c:blue;
+  transform:rotate(22.5deg); /* 360/8 */
+  --c:LightBlue;
 }
 .color2 {
-  transform:rotate(90deg);
-  --c:orange;
+  transform:rotate(45deg);
+  --c:DeepSkyBlue;
 }
 .color3 {
-  transform:rotate(135deg);
-  --c:green;
+  transform:rotate(67.5deg);
+  --c:CornflowerBlue;
 }
 .color4 {
-  transform:rotate(180deg);
-  --c:purple;
+  transform:rotate(90deg);
+  --c:RoyalBlue;
 }
 .color5 {
-  transform:rotate(-45deg); /* 360/8 */
-  --c:orange;
+  transform:rotate(112.5deg); /* 360/8 */
+  --c:Blue;
 }
 .color6 {
-  transform:rotate(-90deg);
-  --c:lightblue;
+  transform:rotate(135deg);
+  --c:MediumBlue;
 }
 .color7 {
+  transform:rotate(157.5deg);
+  --c:DarkBlue;
+}
+.color8 {
+  transform:rotate(180deg); /* 360/8 */
+  --c:Navy;
+}
+.color9 {
+  transform:rotate(-22.4deg);
+  --c:MidnightBlue;
+}
+.color10 {
+  transform:rotate(-45deg);
+  --c:LightSteelBlue;
+}
+.color11 {
+  transform:rotate(-67.5deg);
+  --c:PowderBlue;
+}
+.color12 {
+  transform:rotate(-90deg); /* 360/8 */
+  --c:MediumSeaGreen;
+}
+.color13 {
+  transform:rotate(-112.5deg);
+  --c:SeaGreen;
+}
+.color14 {
   transform:rotate(-135deg);
-  --c:pink;
+  --c:ForestGreen;
+}
+.color15 {
+  transform:rotate(-157.5deg);
+  --c:DarkGreen;
 }
