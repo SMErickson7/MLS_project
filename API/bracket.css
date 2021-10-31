@@ -1,0 +1,53 @@
+.palette {
+  --g:00px; /* The gap between shapes*/
+  --s:20vh; /* the size*/
+
+  height: 90vh;
+  width: 90vh;
+  position:relative;
+  display:inline-block;
+  overflow:hidden;
+}
+.palette > * {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  border:var(--s) solid var(--c,red);
+  border-radius:50%;
+  clip-path:polygon(
+    calc(50% + var(--g)/2) 50%,
+    calc(50% + var(--g)/2) 0%,
+    100% 0%,
+    100% calc(0% - var(--g)/2),
+    50% calc(50% - var(--g)/2));
+}
+.color1 {
+  transform:rotate(45deg); /* 360/8 */
+  --c:blue;
+}
+.color2 {
+  transform:rotate(90deg);
+  --c:orange;
+}
+.color3 {
+  transform:rotate(135deg);
+  --c:green;
+}
+.color4 {
+  transform:rotate(180deg);
+  --c:purple;
+}
+.color5 {
+  transform:rotate(-45deg); /* 360/8 */
+  --c:orange;
+}
+.color6 {
+  transform:rotate(-90deg);
+  --c:lightblue;
+}
+.color7 {
+  transform:rotate(-135deg);
+  --c:pink;
+}
